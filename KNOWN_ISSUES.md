@@ -2,6 +2,14 @@
 
 Status for the first public release. Reports with logs (`adb logcat -d`, time of the problem) are welcome as issues.
 
+## 24.0-20261125 (fixed in the next release)
+
+- **Sending and receiving files over Bluetooth does not work** (`bluetooth.profile.opp.enabled=false`, a LineageOS
+  sm7325-common change that was fixed upstream on 2026-11-21).
+- **`recovery.img` inside the OTA zip is signed with test keys.** The zip does not flash it and the in-app update
+  is not affected. Do not extract it from the zip: use the separate `recovery.img` asset of the release, otherwise
+  the recovery rejects the signed release zips ("failed to verify whole-file signature").
+
 ## Apps
 
 - **Banking and other apps with Play Integrity** may refuse to work: the bootloader is unlocked, so the device
@@ -17,8 +25,8 @@ Status for the first public release. Reports with logs (`adb logcat -d`, time of
 ## System
 
 - **Colors look washed out after turning the screen on**, for about 20 s up to minutes; turning the screen off
-  and on again fixes it. Seen once, cause under investigation (display configuration comes from an AMOLED phone,
-  the tablet has an LCD).
+  and on again fixes it. Seen once, cause under investigation (the HDR and wide color settings match the Samsung
+  stock firmware of this tablet, so they are not the cause on their own).
 - **SystemUI restarts** occasionally in desktop mode or when opening Recents (WM Shell exceptions in framework
   code, not device specific). Observed twice on one day; under observation.
 - **`factory.ssc` tombstones** (`SIGABRT`) appear in the logs from time to time. It is a closed-source Samsung
