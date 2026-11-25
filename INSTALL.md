@@ -66,7 +66,12 @@ Different signing keys: an update that keeps the data does not work, **Format da
 
 ## 3. Updates between releases of this build
 
-Same keys and same variant: Recovery -> Apply update -> Apply from ADB -> sideload the new ZIP. Data stays.
+Same keys and same variant, data stays:
+
+- **On the tablet**: Settings -> System -> Updater -> check for updates, download, install. The Updater only
+  offers newer releases of the variant you run; the tablet reboots into recovery and installs the ZIP.
+- **From a PC**: Recovery -> Apply update -> Apply from ADB -> sideload the new ZIP.
+
 GApps flashed by you (vanilla) survive through `addon.d`. Changing the variant (microg <-> vanilla with GApps)
 needs Format data and the `addon.d` step above.
 
@@ -87,7 +92,7 @@ This tablet has no fastboot and no A/B slots; patch the `boot-<variant>.img` **o
 1. Install the Magisk app (https://github.com/topjohnwu/Magisk/releases), copy `boot-<variant>.img` to the tablet, Install ->
    "Select and Patch a File". Copy the resulting `magisk_patched-*.img` back to the PC.
 2. Download mode, then `samloader flash --partition BOOT magisk_patched-<...>.img`.
-3. After every update (new ZIP) boot is unpatched again: repeat with the new release's `boot-<variant>.img`.
+3. After every update (new ZIP, also through the Updater) boot is unpatched again: repeat with the new release's `boot-<variant>.img`.
 4. To remove root: `samloader flash --partition BOOT boot-<variant>.img` with the original image, or sideload the release ZIP
    again (data stays).
 

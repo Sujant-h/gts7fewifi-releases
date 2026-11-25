@@ -1,16 +1,16 @@
 # Known issues
 
-Status for the upcoming first release (24.0-20261113 was withdrawn before announcement). Reports with logs (`adb logcat -d`, time of the problem) are welcome as issues.
+Status for the first public release. Reports with logs (`adb logcat -d`, time of the problem) are welcome as issues.
 
 ## Apps
 
-- **PayPal closes right after start.** Its tamper check (`AppVerifier`) fails on this build; seen with test-keys,
-  `ro.debuggable=1` and unlocked bootloader. Not yet tested with this release (release-keys, `ro.debuggable=0`);
-  turning off USB debugging and Developer options may help. The unlocked bootloader stays detectable.
 - **Banking and other apps with Play Integrity** may refuse to work: the bootloader is unlocked, so the device
   never passes "device integrity". With the microg variant, enable Google SafetyNet in microG Settings first.
+  Tested and working on the microg variant: PayPal, Trade Republic (login).
 - **Aurora Store 4.8.4 crashes about 2 s after start** (home feed contains an app twice). Upstream issue:
   https://gitlab.com/AuroraOSS/AuroraStore/-/work_items/1611. Workaround: tap "Search" right after start.
+- **Aurora Store shows "Installing" forever** for an app that is not installed. With the microG installer Aurora gets
+  no result back, so a failed installation stays in that state. Fix: Aurora -> Downloads, delete the entry, install again.
 - **microG**: push notifications need Google device registration and Cloud Messaging (both off by default).
   Some Google features (e.g. ML Kit modules that are downloaded by Play services) may be missing.
 

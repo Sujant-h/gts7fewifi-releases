@@ -58,10 +58,24 @@ Branch for development: `lineage-24.0-ss`. The device-specific Samsung blobs (`v
 published separately; to build yourself, extract them from a tablet running T733XXS9DYF1 with
 `extract-files.py` from the device tree.
 
+## Development
+
+Device changes, build scripts and tests were developed with an AI coding assistant (Claude Code by Anthropic).
+Every change was reviewed, built and tested on an SM-T733 before release; commits made with AI help carry a
+`Co-Authored-By: Claude` trailer.
+
 ## Credits
 
-LineageOS, the sm7325 maintainers (Simon1511 and others), Bush-cat for the gts7fewifi bring-up, microG and
-lineageos4microg, F-Droid.
+This build stands on the work of others:
+
+- **Bush-cat**: the gts7fewifi bring-up (device tree, vendor blobs, kernel drivers from T733XXS9DYF1).
+- **Simon1511**: LineageOS maintainer of the sm7325 platform (common device tree, kernel, vendor), including the
+  kernel fix that makes PayPal start again.
+- **Rocky7842** and **J0SH1x**: kernel changes for charging control and the flip cover.
+- **The LineageOS team** (Bruno Martins, Michael Bestas, Nolen Johnson, Cosmin Tanislav, Tim Zimmermann and many
+  others): LineageOS and the Samsung hardware support it builds on.
+- **OpenELA**: Linux 5.4 stable updates.
+- **microG** and **lineageos4microg**; **F-Droid**.
 
 ## Disclaimer
 
