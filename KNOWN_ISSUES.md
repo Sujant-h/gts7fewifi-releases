@@ -2,6 +2,12 @@
 
 Status as of release 24.0-20261113. Reports with logs (`adb logcat -d`, time of the problem) are welcome as issues.
 
+## Release 24.0-20261113: recovery images cannot install the release ZIP
+
+`recovery-microg.img` and `recovery-vanilla.img` of 24.0-20261113 were built with the test keys instead of the
+release keys. Sideloading the release ZIP with them fails (`signature verification failed`, error 21). Do not
+install 24.0-20261113; use the next release, which builds the recovery from the signed sources and checks it.
+
 ## Apps
 
 - **PayPal closes right after start.** Its tamper check (`AppVerifier`) fails on this build; seen with test-keys,

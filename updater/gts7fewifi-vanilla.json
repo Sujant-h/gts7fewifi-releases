@@ -1,0 +1,17 @@
+[
+  {
+    "datetime": 1794567949,
+    "files": [
+      {
+        "filename": "lineage-24.0-20261113-UNOFFICIAL-gts7fewifi-vanilla.zip",
+        "os_patch_level": "2026-11-01",
+        "os_sdk_level": 37,
+        "sha256": "4f10179ae8780b7d84d05917ae4f5603315187f8f7198cb51baae0f03cf5e565",
+        "size": 1246241308,
+        "url": "https://github.com/Sujant-h/gts7fewifi-releases/releases/download/24.0-20261113/lineage-24.0-20261113-UNOFFICIAL-gts7fewifi-vanilla.zip"
+      }
+    ],
+    "type": "unofficial",
+    "version": "24.0"
+  }
+]
