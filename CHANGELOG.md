@@ -5,7 +5,9 @@ Unofficial LineageOS 24.0 (Android 17) for the Samsung Galaxy Tab S7 FE Wi-Fi (S
 Release tags follow `24.0-YYYYMMDD` (build date, same as `ro.lineage.version`). One release per month after
 syncing LineageOS; both variants of a release are built from the same sources and signed with the same keys.
 
-## 24.0-20261113 (first public release)
+## Unreleased (first public release in preparation)
+
+24.0-20261113 was withdrawn: its recovery images were signed with the test keys.
 
 Base: LineageOS 24.0 as of 2026-11-13, Android security patch level 2026-11-01, vendor patch level 2025-06-01
 (firmware T733XXS9DYF1, the last Samsung firmware for this model).
