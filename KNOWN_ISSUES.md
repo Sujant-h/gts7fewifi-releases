@@ -32,6 +32,10 @@ Status for 24.0-20261126. Reports with logs (`adb logcat -d`, time of the proble
 - **`factory.ssc` tombstones** (`SIGABRT`) appear in the logs from time to time. It is a closed-source Samsung
   sensor calibration service; sensors keep working. Harmless.
 - dmesg: `sysfs: cannot create duplicate filename '//wifi'` at boot. Harmless.
+- **Updates never replace the recovery**, and the Updater option **"Update recovery" does nothing**. The ZIP only
+  flashes boot, dtbo and vendor_boot (as on other LineageOS devices without A/B slots), and the service behind the
+  option no longer exists in Android 17. If your recovery still shows an older version (e.g. 23.2), flash
+  `recovery-<variant>.img` by hand, see INSTALL.md section 1, steps 2-3.
 
 ## Security notes
 

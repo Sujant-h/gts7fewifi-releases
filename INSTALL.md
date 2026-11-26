@@ -45,9 +45,10 @@ SM-T733 is **T733XXS9DYF1**; update the stock system to it (Settings, Software u
 
 Different signing keys: an update that keeps the data does not work, **Format data is required**.
 
-1. Flash `recovery-<variant>.img` of this release with samloader-rs as in section 1, steps 2-3 (your old recovery can
-   install the ZIP too, but will show "Signature verification failed" because it does not know the new keys;
-   confirming with Yes works, the new recovery avoids that for later updates).
+1. Flash `recovery-<variant>.img` of this release with samloader-rs as in section 1, steps 2-3. **Do not skip this
+   step**: neither the ZIP nor later updates replace the recovery, an old one (e.g. Lineage Recovery 23.2) stays
+   until you flash the new one by hand. Check the header line in the recovery: it must read
+   `Version 24.0 (<date>)`. If it still shows an older version, the flash did not happen; repeat it.
 2. **If you used GApps before and install the microg variant**: GApps packages put a script into
    `/system/addon.d` (MindTheGapps: `30-gapps.sh`). The recovery runs these scripts during every ZIP installation
    and copies the old Google apps back into the new system, next to microG - even after Format data, because
@@ -71,6 +72,11 @@ Same keys and same variant, data stays:
 - **On the tablet**: Settings -> System -> Updater -> check for updates, download, install. The Updater only
   offers newer releases of the variant you run; the tablet reboots into recovery and installs the ZIP.
 - **From a PC**: Recovery -> Apply update -> Apply from ADB -> sideload the new ZIP.
+
+Updates do **not** update the recovery, and the Updater option "Update recovery" has no effect (see
+KNOWN_ISSUES.md). This is normal for this tablet: the recovery you flashed once keeps installing later releases.
+A new `recovery-<variant>.img` only needs to be flashed by hand (section 1, steps 2-3) when the release notes
+ask for it or when you move to a new LineageOS version.
 
 GApps flashed by you (vanilla) survive through `addon.d`. Changing the variant (microg <-> vanilla with GApps)
 needs Format data and the `addon.d` step above.
