@@ -5,6 +5,20 @@ Unofficial LineageOS 24.0 (Android 17) for the Samsung Galaxy Tab S7 FE Wi-Fi (S
 Release tags follow `24.0-YYYYMMDD` (build date, same as `ro.lineage.version`). One release per month after
 syncing LineageOS; both variants of a release are built from the same sources and signed with the same keys.
 
+## 24.0-20261126
+
+Bug fix release. Base: LineageOS 24.0 as of 2026-11-26, Android security patch level 2026-11-01, vendor patch
+level 2025-06-01. Installs over 24.0-20261125 through the Updater, data is kept.
+
+- **Bluetooth file transfer works again** (OPP was disabled in the common tree; LineageOS fixed it upstream).
+- Media volume on the lowest steps is no longer too loud (SoundBooster removed, as in LineageOS upstream).
+- Super partition size set to the real size of this tablet (8325693440 bytes instead of the Galaxy A52s value).
+  Prevents a future, larger OTA from failing halfway; no visible change now.
+- The OTA zip now contains the release-signed `recovery.img`.
+- Kernel: no longer writes a network statistics line to the kernel log every second.
+- No longer declares pro audio support (`android.hardware.audio.pro`), which the stock firmware does not declare.
+- Removed One UI-only init setup (freezer, cpusets) that nothing in LineageOS uses.
+
 ## 24.0-20261125 (first public release)
 
 Base: LineageOS 24.0 as of 2026-11-13, Android security patch level 2026-11-01, vendor patch level 2025-06-01

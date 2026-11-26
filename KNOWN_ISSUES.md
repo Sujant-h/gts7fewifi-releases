@@ -1,8 +1,8 @@
 # Known issues
 
-Status for the first public release. Reports with logs (`adb logcat -d`, time of the problem) are welcome as issues.
+Status for 24.0-20261126. Reports with logs (`adb logcat -d`, time of the problem) are welcome as issues.
 
-## 24.0-20261125 (fixed in the next release)
+## 24.0-20261125 (fixed in 24.0-20261126)
 
 - **Sending and receiving files over Bluetooth does not work** (`bluetooth.profile.opp.enabled=false`, a LineageOS
   sm7325-common change that was fixed upstream on 2026-11-21).
