@@ -64,6 +64,8 @@ Device changes, build scripts and tests were developed with an AI coding assista
 Every change was reviewed, built and tested on an SM-T733 before release; commits made with AI help carry a
 `Co-Authored-By: Claude` trailer.
 
+The updater feed is updated after the published OTA download is verified.
+
 ## Credits
 
 This build stands on the work of others:
